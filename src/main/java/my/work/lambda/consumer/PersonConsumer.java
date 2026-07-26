@@ -1,21 +1,24 @@
 package my.work.lambda.consumer;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
+@Slf4j
 public class PersonConsumer {
 
-    private static final Consumer<Person> ALL_INFO = System.out::println;
+    private static final Consumer<Person> ALL_INFO = person -> log.info(person.toString());
 
-    private static final Consumer<Person> NAME_AND_AGE = person -> System.out.println(person.getName() + ":" + person.getAge());
+    private static final Consumer<Person> NAME_AND_AGE = person -> log.info("{}:{}", person.getName(), person.getAge());
 
-    private static final Consumer<Person> PHONES = person -> System.out.println(person.getPhones());
+    private static final Consumer<Person> PHONES = person -> log.info(String.join(", ", person.getPhones()));
 
     private static final BiConsumer<String, List<String>> NAME_AND_AGE_AND_PHONES = (nameAndAge, phones) ->
     {
-        System.out.println(nameAndAge);
-        System.out.println(phones);
+        log.info(nameAndAge);
+        log.info(String.join(", ", phones));
     };
 
     public static void showAllInfo(List<Person> people) {

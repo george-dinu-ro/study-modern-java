@@ -42,4 +42,9 @@ class SimpleConsumerTest extends ALogger {
         return Stream.of(Arguments.of("hello"));
     }
 
+    @Override
+    protected Class<?> getLoggedClass() {
+        return SimpleConsumer.class;
+    }
+
 }
