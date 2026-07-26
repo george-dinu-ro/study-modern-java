@@ -40,8 +40,27 @@ class PersonConsumerTest {
 
     @ParameterizedTest
     @MethodSource("getPeople")
-    void whenCallShowInfoSeparately_thenCall2Consumers(List<Person> people) {
-        PersonConsumer.showInfoSeparately(people);
+    void whenCallShowInfoSeparatelyWithConsumer_thenCall2Consumers(List<Person> people) {
+        PersonConsumer.showInfoSeparatelyWithConsumer(people);
+
+        var expected = """
+                John J.:20
+                [*10, *11, *12]
+                Dan D.:25
+                [*21, *22]
+                Marry M.:30
+                [*31]
+                Nick N.:27
+                [*41, *42]
+                """;
+
+        assertEquals(clean(expected), clean(outputStream.toString()));
+    }
+
+    @ParameterizedTest
+    @MethodSource("getPeople")
+    void whenCallShowInfoSeparatelyWithBiConsumer_thenCallBiConsumer(List<Person> people) {
+        PersonConsumer.showInfoSeparatelyWithBiConsumer(people);
 
         var expected = """
                 John J.:20
