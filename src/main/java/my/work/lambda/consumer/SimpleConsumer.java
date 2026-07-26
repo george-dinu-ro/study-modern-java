@@ -1,17 +1,20 @@
 package my.work.lambda.consumer;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.function.Consumer;
 
+@Slf4j
 public class SimpleConsumer {
 
+    private static final Consumer<String> CONSUMER = log::info;
+
     public static void consume(String info) {
-        Consumer<String> consumer = System.out::println;
-        consumer.accept(info);
+        CONSUMER.accept(info);
     }
 
     public static void consumeAndThen(String string) {
-        Consumer<String> consumer = System.out::println;
-        consumer.andThen(consumer).accept(string);
+        CONSUMER.andThen(CONSUMER).accept(string);
     }
 
 }

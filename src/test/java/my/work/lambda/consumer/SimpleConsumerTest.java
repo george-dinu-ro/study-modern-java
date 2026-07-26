@@ -1,54 +1,45 @@
 package my.work.lambda.consumer;
 
-import my.work.lambda.StringUtil;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import my.work.ALogger;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
-import java.io.PrintStream;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-class SimpleConsumerTest {
+class SimpleConsumerTest extends ALogger {
 
-    private OutputStream outputStream;
-
-    @BeforeEach
-    void beforeEach() {
-        this.outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-    }
-
-    @Test
-    void whenCallConsume_thenCallOneConsumer() {
-        var expected = "hello";
-        var unExpected = "bye";
-
+    @ParameterizedTest
+    @MethodSource("getData")
+    void whenCallConsume_thenCallOneConsumer(String expected) {
         SimpleConsumer.consume(expected);
 
-        var actual = StringUtil.cleanAndGet(outputStream.toString());
+        assertEquals(1, getMessagesSize());
 
-        assertEquals(expected, actual);
-        assertNotEquals(unExpected, actual);
+        assertEquals(expected, getMessage(0));
+
+        assertNotEquals(expected + System.currentTimeMillis(), getMessage(0));
     }
 
-    @Test
-    void whenCallConsumeAndThen_thenCallTwoConsumers() {
-        var input = "hello";
-        var expected = """
-                hello
-                hello
-                """;
-        var unExpected = "bye";
+    @ParameterizedTest
+    @MethodSource("getData")
+    void whenCallConsumeAndThen_thenCallTwoConsumers(String expected) {
+        SimpleConsumer.consumeAndThen(expected);
 
-        SimpleConsumer.consumeAndThen(input);
+        assertEquals(2, getMessagesSize());
 
-        var actual = StringUtil.cleanAndGet(outputStream.toString());
+        assertEquals(expected, getMessage(0));
 
-        assertEquals(StringUtil.cleanAndGet(expected), actual);
-        assertNotEquals(unExpected, actual);
+        assertEquals(expected, getMessage(1));
+
+        assertNotEquals(expected + System.currentTimeMillis(), getMessage(0));
+    }
+
+    private static Stream<Arguments> getData() {
+        return Stream.of(Arguments.of("hello"));
     }
 
 }
