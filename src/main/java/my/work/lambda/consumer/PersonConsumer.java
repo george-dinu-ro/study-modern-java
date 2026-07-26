@@ -1,6 +1,7 @@
 package my.work.lambda.consumer;
 
 import lombok.extern.slf4j.Slf4j;
+import my.work.lambda.Person;
 
 import java.util.List;
 import java.util.function.BiConsumer;

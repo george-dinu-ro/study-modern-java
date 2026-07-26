@@ -1,6 +1,7 @@
 package my.work.lambda.consumer;
 
 import my.work.ALogger;
+import my.work.lambda.Person;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;

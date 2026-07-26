@@ -1,4 +1,4 @@
-package my.work.lambda.consumer;
+package my.work.lambda;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
