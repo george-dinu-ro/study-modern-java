@@ -8,7 +8,7 @@ import java.util.function.Function;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class SimpleFunction {
 
-    private static final Function<String, String> UPPER_CASE = String::toUpperCase;
+    public static final Function<String, String> UPPER_CASE = String::toUpperCase;
 
     private static final Function<String, String> ADD_SUFFIX = s -> s + "end";
 
