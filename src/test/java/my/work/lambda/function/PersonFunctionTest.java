@@ -1,6 +1,7 @@
 package my.work.lambda.function;
 
 import my.work.lambda.Person;
+import my.work.lambda.predicate.PersonPredicate;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -39,6 +40,21 @@ class PersonFunctionTest {
                 "Larry L.", 0);
 
         var actual = PersonFunction.getAdultsWithPhonesCount(people);
+
+        assertEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @MethodSource("my.work.lambda.PersonStorage#getPeople")
+    void whenCallGetAdultsWithPhonesCountBiFunction_thenCallOneFunctionAndOnePredicate(List<Person> people) {
+        var expected = Map.of(
+                "John J.", 3,
+                "Dan D.", 2,
+                "Marry M.", 1,
+                "Nick N.", 2,
+                "Larry L.", 0);
+
+        var actual = PersonFunction.getAdultsWithPhonesCountBiFunction(people, PersonPredicate.IS_ADULT);
 
         assertEquals(expected, actual);
     }
