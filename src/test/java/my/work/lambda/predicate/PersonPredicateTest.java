@@ -78,6 +78,36 @@ class PersonPredicateTest {
 
     @ParameterizedTest
     @MethodSource("my.work.lambda.PersonStorage#getPeople")
+    void whenCallGetAdultsWithOneFilterBiPredicate_thenCallOneFilterWithOneBiPredicate(List<Person> people) {
+        var expected = List.of(
+                Person.builder()
+                        .name("John J.")
+                        .age(20)
+                        .phones(List.of("*10", "*11", "*12"))
+                        .build(),
+                Person.builder()
+                        .name("Dan D.")
+                        .age(25)
+                        .phones(List.of("*21", "*22"))
+                        .build(),
+                Person.builder()
+                        .name("Marry M.")
+                        .age(30)
+                        .phones(List.of("*31"))
+                        .build(),
+                Person.builder()
+                        .name("Nick N.")
+                        .age(27)
+                        .phones(List.of("*41", "*42"))
+                        .build());
+
+        var actual = PersonPredicate.getAdultsWithPhonesWithOneFilterBiPredicate(people);
+
+        assertIterableEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @MethodSource("my.work.lambda.PersonStorage#getPeople")
     void whenCallGetAdultsWithTwoFilters_thenCallTwoFiltersWithTwoPredicates(List<Person> people) {
         var expected = List.of(
                 Person.builder()
