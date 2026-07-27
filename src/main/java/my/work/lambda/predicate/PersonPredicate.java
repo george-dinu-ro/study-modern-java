@@ -11,7 +11,7 @@ import java.util.function.Predicate;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class PersonPredicate {
 
-    private static final Predicate<Person> IS_ADULT = person -> person.getAge() >= 18;
+    public static final Predicate<Person> IS_ADULT = person -> person.getAge() >= 18;
 
     private static final Predicate<Person> HAS_PHONES = person -> !person.getPhones().isEmpty();
 
