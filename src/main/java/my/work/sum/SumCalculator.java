@@ -1,7 +1,11 @@
 package my.work.sum;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 import java.util.stream.IntStream;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class SumCalculator {
 
     public static int getImperativeSum(int maxNumber) {

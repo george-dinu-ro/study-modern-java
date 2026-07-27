@@ -1,5 +1,7 @@
 package my.work.lambda.consumer;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import my.work.lambda.Person;
 
@@ -7,6 +9,7 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Slf4j
 public class PersonConsumer {
 

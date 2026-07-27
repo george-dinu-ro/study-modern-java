@@ -1,7 +1,11 @@
 package my.work.lambda.predicate;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 import java.util.function.Predicate;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class SimplePredicate {
 
     private static final Predicate<String> AT_LEAST_3_CHARACTERS = s -> s.length() >= 3;

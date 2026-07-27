@@ -1,9 +1,13 @@
 package my.work.number;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class DuplicateRemover {
 
     public static List<Integer> removeDuplicatesImperative(List<Integer> list) {
