@@ -1,4 +1,4 @@
-package my.work.lambda;
+package my.work;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

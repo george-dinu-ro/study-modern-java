@@ -1,6 +1,6 @@
 package my.work.lambda.function;
 
-import my.work.lambda.Person;
+import my.work.Person;
 import my.work.lambda.predicate.PersonPredicate;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class PersonFunctionTest {
 
     @ParameterizedTest
-    @MethodSource("my.work.lambda.PersonStorage#getPeople")
+    @MethodSource("my.work.PersonStorage#getPeople")
     void whenCallGetPeopleWithPhonesCount_thenCallOneFunction(List<Person> people) {
         var expected = Map.of(
                 "John J.", 3,
@@ -30,7 +30,7 @@ class PersonFunctionTest {
     }
 
     @ParameterizedTest
-    @MethodSource("my.work.lambda.PersonStorage#getPeople")
+    @MethodSource("my.work.PersonStorage#getPeople")
     void whenCallGetAdultsWithPhonesCount_thenCallOneFunctionAndOnePredicate(List<Person> people) {
         var expected = Map.of(
                 "John J.", 3,
@@ -45,7 +45,7 @@ class PersonFunctionTest {
     }
 
     @ParameterizedTest
-    @MethodSource("my.work.lambda.PersonStorage#getPeople")
+    @MethodSource("my.work.PersonStorage#getPeople")
     void whenCallGetAdultsWithPhonesCountBiFunction_thenCallOneFunctionAndOnePredicate(List<Person> people) {
         var expected = Map.of(
                 "John J.", 3,

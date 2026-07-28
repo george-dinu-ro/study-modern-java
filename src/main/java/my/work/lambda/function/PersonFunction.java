@@ -2,7 +2,7 @@ package my.work.lambda.function;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import my.work.lambda.Person;
+import my.work.Person;
 import my.work.lambda.predicate.PersonPredicate;
 
 import java.util.List;

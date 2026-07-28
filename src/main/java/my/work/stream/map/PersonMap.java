@@ -2,7 +2,7 @@ package my.work.stream.map;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import my.work.lambda.Person;
+import my.work.Person;
 
 import java.util.List;
 

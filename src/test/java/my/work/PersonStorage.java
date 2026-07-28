@@ -1,4 +1,4 @@
-package my.work.lambda;
+package my.work;
 
 import org.junit.jupiter.params.provider.Arguments;
 

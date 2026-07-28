@@ -1,7 +1,7 @@
 package my.work.lambda.consumer;
 
 import my.work.ALogger;
-import my.work.lambda.Person;
+import my.work.Person;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 class PersonConsumerTest extends ALogger {
 
     @ParameterizedTest
-    @MethodSource("my.work.lambda.PersonStorage#getPeople")
+    @MethodSource("my.work.PersonStorage#getPeople")
     void whenCallShowAllInfo_thenCallToStringMethod(List<Person> people) {
         PersonConsumer.showAllInfo(people);
 
@@ -37,7 +37,7 @@ class PersonConsumerTest extends ALogger {
     }
 
     @ParameterizedTest
-    @MethodSource("my.work.lambda.PersonStorage#getPeople")
+    @MethodSource("my.work.PersonStorage#getPeople")
     void whenCallShowInfoSeparatelyWithConsumer_thenCall2Consumers(List<Person> people) {
         PersonConsumer.showInfoSeparatelyWithConsumer(people);
 
@@ -67,7 +67,7 @@ class PersonConsumerTest extends ALogger {
     }
 
     @ParameterizedTest
-    @MethodSource("my.work.lambda.PersonStorage#getPeople")
+    @MethodSource("my.work.PersonStorage#getPeople")
     void whenCallShowInfoSeparatelyWithBiConsumer_thenCallBiConsumer(List<Person> people) {
         PersonConsumer.showInfoSeparatelyWithBiConsumer(people);
 
@@ -97,7 +97,7 @@ class PersonConsumerTest extends ALogger {
     }
 
     @ParameterizedTest
-    @MethodSource("my.work.lambda.PersonStorage#getPeople")
+    @MethodSource("my.work.PersonStorage#getPeople")
     void whenCallShowInfoSeparatelyWithAgeFilter_thenCall2ConsumersWithAgeFilter(List<Person> people) {
         PersonConsumer.showInfoSeparatelyWithAgeFilter(people, 27);
 

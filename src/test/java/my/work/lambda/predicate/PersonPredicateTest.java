@@ -1,6 +1,6 @@
 package my.work.lambda.predicate;
 
-import my.work.lambda.Person;
+import my.work.Person;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 class PersonPredicateTest {
 
     @ParameterizedTest
-    @MethodSource("my.work.lambda.PersonStorage#getPeople")
+    @MethodSource("my.work.PersonStorage#getPeople")
     void whenCallGetAdults_thenCallOnePredicate(List<Person> people) {
         var expected = List.of(
                 Person.builder()
@@ -47,7 +47,7 @@ class PersonPredicateTest {
     }
 
     @ParameterizedTest
-    @MethodSource("my.work.lambda.PersonStorage#getPeople")
+    @MethodSource("my.work.PersonStorage#getPeople")
     void whenCallGetAdultsWithOneFilter_thenCallOneFilterWithTwoPredicates(List<Person> people) {
         var expected = List.of(
                 Person.builder()
@@ -77,7 +77,7 @@ class PersonPredicateTest {
     }
 
     @ParameterizedTest
-    @MethodSource("my.work.lambda.PersonStorage#getPeople")
+    @MethodSource("my.work.PersonStorage#getPeople")
     void whenCallGetAdultsWithOneFilterBiPredicate_thenCallOneFilterWithOneBiPredicate(List<Person> people) {
         var expected = List.of(
                 Person.builder()
@@ -107,7 +107,7 @@ class PersonPredicateTest {
     }
 
     @ParameterizedTest
-    @MethodSource("my.work.lambda.PersonStorage#getPeople")
+    @MethodSource("my.work.PersonStorage#getPeople")
     void whenCallGetAdultsWithTwoFilters_thenCallTwoFiltersWithTwoPredicates(List<Person> people) {
         var expected = List.of(
                 Person.builder()

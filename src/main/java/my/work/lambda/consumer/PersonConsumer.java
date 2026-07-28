@@ -3,7 +3,7 @@ package my.work.lambda.consumer;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import my.work.lambda.Person;
+import my.work.Person;
 
 import java.util.List;
 import java.util.function.BiConsumer;
