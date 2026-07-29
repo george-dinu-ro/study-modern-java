@@ -17,4 +17,20 @@ public class SimpleReduce {
         return list.stream().reduce(Integer::sum);
     }
 
+    public static int getMinWithDefault(List<Integer> list) {
+        return list.stream().reduce(Integer.MAX_VALUE, Integer::min);
+    }
+
+    public static Optional<Integer> getOptionalMin(List<Integer> list) {
+        return list.stream().reduce(Integer::min);
+    }
+
+    public static int getMaxWithDefault(List<Integer> list) {
+        return list.stream().reduce(Integer.MIN_VALUE, Integer::max);
+    }
+
+    public static Optional<Integer> getOptionalMax(List<Integer> list) {
+        return list.stream().reduce(Integer::max);
+    }
+
 }
