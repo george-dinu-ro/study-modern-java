@@ -19,4 +19,25 @@ class PersonMapTest {
         assertIterableEquals(expected, actual);
     }
 
+    @ParameterizedTest
+    @MethodSource("my.work.PersonStorage#getPeople")
+    void whenCallGetPeopleOrderedByNameAsc_thenCallMapAndSortByName(List<Person> people) {
+        var expected = List.of("Bob B.", "Dan D.", "Eugen E.", "John J.", "Larry L.", "Marry M.", "Nick N.");
+        var actual = PersonMap.getPeopleOrderedByNameAsc(people);
+        var names = actual.stream().map(Person::getName).toList();
+
+        assertIterableEquals(expected, names);
+    }
+
+    @ParameterizedTest
+    @MethodSource("my.work.PersonStorage#getPeople")
+    void whenCallGetPeopleOrderedByAgeDesc_thenCallMapAndSortByAgeDesc(List<Person> people) {
+        var expected = List.of(30, 30, 27, 25, 20, 17, 16);
+        var actual = PersonMap.getPeopleOrderedByAgeDesc(people);
+        var ages = actual.stream().map(Person::getAge).toList();
+
+        assertIterableEquals(expected, ages);
+    }
+
+
 }
