@@ -32,7 +32,7 @@ class PersonMapTest {
     @ParameterizedTest
     @MethodSource("my.work.PersonStorage#getPeople")
     void whenCallGetPeopleOrderedByAgeDesc_thenCallMapAndSortByAgeDesc(List<Person> people) {
-        var expected = List.of(30, 30, 27, 25, 20, 17, 16);
+        var expected = List.of(32, 30, 27, 25, 20, 17, 16);
         var actual = PersonMap.getPeopleOrderedByAgeDesc(people);
         var ages = actual.stream().map(Person::getAge).toList();
 

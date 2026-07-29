@@ -21,7 +21,7 @@ class PersonConsumerTest extends ALogger {
         var expected = List.of(
                 "Person(name=John J., age=20, phones=[*10, *11, *12])",
                 "Person(name=Dan D., age=25, phones=[*21, *22])",
-                "Person(name=Marry M., age=30, phones=[*31])",
+                "Person(name=Marry M., age=32, phones=[*31])",
                 "Person(name=Nick N., age=27, phones=[*41, *42])",
                 "Person(name=Eugen E., age=17, phones=[*51])",
                 "Person(name=Larry L., age=30, phones=[])",
@@ -46,7 +46,7 @@ class PersonConsumerTest extends ALogger {
                 "*10, *11, *12",
                 "Dan D.:25",
                 "*21, *22",
-                "Marry M.:30",
+                "Marry M.:32",
                 "*31",
                 "Nick N.:27",
                 "*41, *42",
@@ -76,7 +76,7 @@ class PersonConsumerTest extends ALogger {
                 "*10, *11, *12",
                 "Dan D.:25",
                 "*21, *22",
-                "Marry M.:30",
+                "Marry M.:32",
                 "*31",
                 "Nick N.:27",
                 "*41, *42",
@@ -102,7 +102,7 @@ class PersonConsumerTest extends ALogger {
         PersonConsumer.showInfoSeparatelyWithAgeFilter(people, 27);
 
         var expected = List.of(
-                "Marry M.:30",
+                "Marry M.:32",
                 "*31",
                 "Nick N.:27",
                 "*41, *42",

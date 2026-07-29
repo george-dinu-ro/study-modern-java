@@ -27,7 +27,7 @@ class PersonFilterTest {
                         .build(),
                 Person.builder()
                         .name("Marry M.")
-                        .age(30)
+                        .age(32)
                         .phones(List.of("*31"))
                         .build(),
                 Person.builder()
