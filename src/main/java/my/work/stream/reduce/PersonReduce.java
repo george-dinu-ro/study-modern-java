@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.BinaryOperator;
 
+import static my.work.lambda.predicate.PersonPredicate.IS_ADULT;
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class PersonReduce {
 
@@ -15,6 +17,13 @@ public class PersonReduce {
 
     public static Optional<Person> getOldest(List<Person> people) {
         return people.stream().reduce(GET_OLDEST_ACCUMULATOR);
+    }
+
+    public static int getAdultsTotalAge(List<Person> people) {
+        return people.stream()
+                .filter(IS_ADULT)
+                .map(Person::getAge)
+                .reduce(0, Integer::sum);
     }
 
 }

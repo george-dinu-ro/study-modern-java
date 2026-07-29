@@ -27,4 +27,12 @@ class PersonReduceTest {
         assertEquals(expected, actual.get());
     }
 
+    @ParameterizedTest
+    @MethodSource("my.work.PersonStorage#getPeople")
+    void whenCallGetAdultsTotalAge_thenDoSum(List<Person> people) {
+        var actual = PersonReduce.getAdultsTotalAge(people);
+
+        assertEquals(134, actual);
+    }
+
 }
