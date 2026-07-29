@@ -15,4 +15,24 @@ public class SimpleFlatMap {
                 .toList();
     }
 
+    public static List<String> flatMapDistinct(List<List<String>> input) {
+        return input.stream()
+                .flatMap(Collection::stream)
+                .distinct()
+                .toList();
+    }
+
+    public static List<String> flatMapSorted(List<List<String>> input) {
+        return input.stream()
+                .flatMap(Collection::stream)
+                .sorted()
+                .toList();
+    }
+
+    public static long flatMapCount(List<List<String>> input) {
+        return input.stream()
+                .flatMap(Collection::stream)
+                .count();
+    }
+
 }
