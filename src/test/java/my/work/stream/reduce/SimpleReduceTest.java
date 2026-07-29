@@ -64,6 +64,22 @@ class SimpleReduceTest {
         assertEquals(expected, actual);
     }
 
+    @ParameterizedTest
+    @MethodSource("initSumWithLimit")
+    void whenCallGetSumWithLimit_thenUseLimit(List<Integer> input, int limit, int expected) {
+        var actual = SimpleReduce.getSumWithLimit(input, limit);
+
+        assertEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @MethodSource("initSumWithSkip")
+    void whenCallGetSumWithSkip_thenUseSkip(List<Integer> input, int skip, int expected) {
+        var actual = SimpleReduce.getSumWithSkip(input, skip);
+
+        assertEquals(expected, actual);
+    }
+
     private static Stream<Arguments> initReduce() {
         return Stream.of(Arguments.of(List.of(1, 2, 3, 4, 5), 15));
     }
@@ -90,6 +106,14 @@ class SimpleReduceTest {
         return Stream.of(
                 Arguments.of(List.of(1000, 0, 10000, -1000), Optional.of(10000)),
                 Arguments.of(Collections.emptyList(), Optional.empty()));
+    }
+
+    private static Stream<Arguments> initSumWithLimit() {
+        return Stream.of(Arguments.of(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9), 5, 15));
+    }
+
+    private static Stream<Arguments> initSumWithSkip() {
+        return Stream.of(Arguments.of(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9), 5, 30));
     }
 
 }

@@ -33,4 +33,12 @@ public class SimpleReduce {
         return list.stream().reduce(Integer::max);
     }
 
+    public static int getSumWithLimit(List<Integer> list, int limit) {
+        return list.stream().limit(limit).reduce(0, Integer::sum);
+    }
+
+    public static int getSumWithSkip(List<Integer> list, int skip) {
+        return list.stream().skip(skip).reduce(0, Integer::sum);
+    }
+
 }
