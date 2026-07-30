@@ -18,26 +18,31 @@ class PersonPredicateTest {
                 Person.builder()
                         .name("John J.")
                         .age(20)
+                        .status("student")
                         .phones(List.of("*10", "*11", "*12"))
                         .build(),
                 Person.builder()
                         .name("Dan D.")
                         .age(25)
+                        .status("employee")
                         .phones(List.of("*21", "*22"))
                         .build(),
                 Person.builder()
                         .name("Marry M.")
                         .age(32)
+                        .status("employee")
                         .phones(List.of("*31"))
                         .build(),
                 Person.builder()
                         .name("Nick N.")
                         .age(27)
+                        .status("employee")
                         .phones(List.of("*41", "*42"))
                         .build(),
                 Person.builder()
                         .name("Larry L.")
                         .age(30)
+                        .status("employee")
                         .phones(Collections.emptyList())
                         .build());
 
@@ -53,21 +58,25 @@ class PersonPredicateTest {
                 Person.builder()
                         .name("John J.")
                         .age(20)
+                        .status("student")
                         .phones(List.of("*10", "*11", "*12"))
                         .build(),
                 Person.builder()
                         .name("Dan D.")
                         .age(25)
+                        .status("employee")
                         .phones(List.of("*21", "*22"))
                         .build(),
                 Person.builder()
                         .name("Marry M.")
                         .age(32)
+                        .status("employee")
                         .phones(List.of("*31"))
                         .build(),
                 Person.builder()
                         .name("Nick N.")
                         .age(27)
+                        .status("employee")
                         .phones(List.of("*41", "*42"))
                         .build());
 
@@ -83,21 +92,25 @@ class PersonPredicateTest {
                 Person.builder()
                         .name("John J.")
                         .age(20)
+                        .status("student")
                         .phones(List.of("*10", "*11", "*12"))
                         .build(),
                 Person.builder()
                         .name("Dan D.")
                         .age(25)
+                        .status("employee")
                         .phones(List.of("*21", "*22"))
                         .build(),
                 Person.builder()
                         .name("Marry M.")
                         .age(32)
+                        .status("employee")
                         .phones(List.of("*31"))
                         .build(),
                 Person.builder()
                         .name("Nick N.")
                         .age(27)
+                        .status("employee")
                         .phones(List.of("*41", "*42"))
                         .build());
 
@@ -113,21 +126,25 @@ class PersonPredicateTest {
                 Person.builder()
                         .name("John J.")
                         .age(20)
+                        .status("student")
                         .phones(List.of("*10", "*11", "*12"))
                         .build(),
                 Person.builder()
                         .name("Dan D.")
                         .age(25)
+                        .status("employee")
                         .phones(List.of("*21", "*22"))
                         .build(),
                 Person.builder()
                         .name("Marry M.")
                         .age(32)
+                        .status("employee")
                         .phones(List.of("*31"))
                         .build(),
                 Person.builder()
                         .name("Nick N.")
                         .age(27)
+                        .status("employee")
                         .phones(List.of("*41", "*42"))
                         .build());
 

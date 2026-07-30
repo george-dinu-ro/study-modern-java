@@ -24,6 +24,8 @@ public class Person {
 
     private int age;
 
+    private String status;
+
     @Builder.Default
     private List<String> phones = new ArrayList<>();
 

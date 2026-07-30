@@ -17,6 +17,7 @@ class PersonReduceTest {
         var expected = Person.builder()
                 .name("Marry M.")
                 .age(32)
+                .status("employee")
                 .phones(List.of("*31"))
                 .build();
 

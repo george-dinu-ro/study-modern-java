@@ -18,6 +18,7 @@ class PersonMinByMaxByTest {
         var expected = Optional.of(Person.builder()
                 .name("Bob B.")
                 .age(16)
+                .status("high-school")
                 .phones(Collections.emptyList())
                 .build());
 
@@ -32,6 +33,7 @@ class PersonMinByMaxByTest {
         var expected = Optional.of(Person.builder()
                 .name("Marry M.")
                 .age(32)
+                .status("employee")
                 .phones(List.of("*31"))
                 .build());
 

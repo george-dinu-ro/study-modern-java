@@ -17,6 +17,7 @@ class PersonFindTest {
         var expected = Optional.of(Person.builder()
                 .name("John J.")
                 .age(20)
+                .status("student")
                 .phones(List.of("*10", "*11", "*12"))
                 .build());
         var actual = PersonFind.findFirstAdult(people);
@@ -30,6 +31,7 @@ class PersonFindTest {
         var expected = Optional.of(Person.builder()
                 .name("John J.")
                 .age(20)
+                .status("student")
                 .phones(List.of("*10", "*11", "*12"))
                 .build());
         var actual = PersonFind.findAnyAdult(people);
