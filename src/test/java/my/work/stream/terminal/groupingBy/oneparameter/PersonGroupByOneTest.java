@@ -1,4 +1,4 @@
-package my.work.stream.terminal.groupingBy.v1;
+package my.work.stream.terminal.groupingBy.oneparameter;
 
 import my.work.Person;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,7 +10,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class PersonGroupByTest {
+class PersonGroupByOneTest {
 
     @ParameterizedTest
     @MethodSource("my.work.PersonStorage#getPeople")
@@ -64,7 +64,7 @@ class PersonGroupByTest {
                                 .phones(Collections.emptyList())
                                 .build()));
 
-        var actual = PersonGroupBy.groupingByStatus(people);
+        var actual = PersonGroupByOne.groupingByStatus(people);
 
         assertEquals(expected, actual);
     }
@@ -120,7 +120,7 @@ class PersonGroupByTest {
                                 .phones(Collections.emptyList())
                                 .build()));
 
-        var actual = PersonGroupBy.groupingByAge(people);
+        var actual = PersonGroupByOne.groupingByAge(people);
 
         assertEquals(expected, actual);
     }

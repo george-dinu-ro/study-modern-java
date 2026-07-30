@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class PersonSummingAveraging {
 
-    private static int getNumberOfPhones(Person person) {
+    public static int getNumberOfPhones(Person person) {
         return person.getPhones().size();
     }
 

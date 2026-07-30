@@ -1,4 +1,4 @@
-package my.work.stream.terminal.groupingBy.v1;
+package my.work.stream.terminal.groupingBy.oneparameter;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -9,9 +9,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class PersonGroupBy {
+public class PersonGroupByOne {
 
-    private static String ageLabel(Person person) {
+    public static String ageLabel(Person person) {
         return person.getAge() >= 18 ? "ADULT" : "MINOR";
     }
 
@@ -20,7 +20,7 @@ public class PersonGroupBy {
     }
 
     public static Map<String, List<Person>> groupingByAge(List<Person> people) {
-        return people.stream().collect(Collectors.groupingBy(PersonGroupBy::ageLabel));
+        return people.stream().collect(Collectors.groupingBy(PersonGroupByOne::ageLabel));
     }
 
 }
