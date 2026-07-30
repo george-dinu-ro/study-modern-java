@@ -1,4 +1,4 @@
-package my.work.stream.terminal;
+package my.work.stream.terminal.joining;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

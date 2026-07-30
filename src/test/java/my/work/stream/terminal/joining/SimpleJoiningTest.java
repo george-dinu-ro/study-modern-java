@@ -1,4 +1,4 @@
-package my.work.stream.terminal;
+package my.work.stream.terminal.joining;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
