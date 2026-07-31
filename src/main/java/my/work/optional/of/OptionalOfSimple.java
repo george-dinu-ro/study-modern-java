@@ -1,4 +1,4 @@
-package my.work.optional;
+package my.work.optional.of;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import java.util.Optional;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class OptionalSimple {
+public class OptionalOfSimple {
 
     public static Optional<String> ofNullable(String string) {
         return Optional.ofNullable(string);

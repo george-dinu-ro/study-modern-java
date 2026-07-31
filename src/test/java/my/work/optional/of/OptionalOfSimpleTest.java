@@ -1,4 +1,4 @@
-package my.work.optional;
+package my.work.optional.of;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -11,12 +11,12 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class OptionalSimpleTest {
+class OptionalOfSimpleTest {
 
     @ParameterizedTest
     @MethodSource("initOfNullable")
     void whenCallOfNullable_thenUseOfNullable(String input, Optional<String> expected) {
-        var actual = OptionalSimple.ofNullable(input);
+        var actual = OptionalOfSimple.ofNullable(input);
 
         assertEquals(expected, actual);
     }
@@ -24,7 +24,7 @@ class OptionalSimpleTest {
     @ParameterizedTest
     @MethodSource("initOf")
     void whenCallOf_thenUseOf(String input, Optional<String> expected) {
-        var actual = OptionalSimple.of(input);
+        var actual = OptionalOfSimple.of(input);
 
         assertEquals(expected, actual);
     }
@@ -33,12 +33,12 @@ class OptionalSimpleTest {
     void whenCallOfWithNull_thenThrowsException() {
         assertThrows(
                 NullPointerException.class,
-                () -> OptionalSimple.of(null));
+                () -> OptionalOfSimple.of(null));
     }
 
     @Test
     void whenCallEmpty_thenUseEmpty() {
-        assertEquals(Optional.empty(), OptionalSimple.empty());
+        assertEquals(Optional.empty(), OptionalOfSimple.empty());
     }
 
     private static Stream<Arguments> initOfNullable() {
