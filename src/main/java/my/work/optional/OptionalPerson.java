@@ -13,4 +13,5 @@ public class OptionalPerson {
         var optionalPerson = Optional.ofNullable(person);
         return optionalPerson.map(Person::getName).orElse("");
     }
+
 }
