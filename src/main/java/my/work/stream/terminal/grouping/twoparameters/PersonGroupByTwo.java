@@ -4,7 +4,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import my.work.Person;
 import my.work.stream.terminal.grouping.oneparameter.PersonGroupByOne;
-import my.work.stream.terminal.summingaveraging.PersonSummingAveraging;
+import my.work.stream.terminal.summingandaveraging.PersonSummingAveraging;
 
 import java.util.List;
 import java.util.Map;

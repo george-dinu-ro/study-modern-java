@@ -1,4 +1,4 @@
-package my.work.stream.terminal.summingaveraging;
+package my.work.stream.terminal.summingandaveraging;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

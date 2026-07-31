@@ -1,4 +1,4 @@
-package my.work.stream.terminal.minbymaxby;
+package my.work.stream.terminal.minandmax;
 
 import my.work.Person;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -1,4 +1,4 @@
-package my.work.stream.terminal.minbymaxby;
+package my.work.stream.terminal.minandmax;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

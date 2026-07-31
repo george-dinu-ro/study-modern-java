@@ -1,4 +1,4 @@
-package my.work.stream.terminal.summingaveraging;
+package my.work.stream.terminal.summingandaveraging;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
