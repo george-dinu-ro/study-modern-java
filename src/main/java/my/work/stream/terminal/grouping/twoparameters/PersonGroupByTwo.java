@@ -1,9 +1,9 @@
-package my.work.stream.terminal.groupingBy.twoparameters;
+package my.work.stream.terminal.grouping.twoparameters;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import my.work.Person;
-import my.work.stream.terminal.groupingBy.oneparameter.PersonGroupByOne;
+import my.work.stream.terminal.grouping.oneparameter.PersonGroupByOne;
 import my.work.stream.terminal.summingaveraging.PersonSummingAveraging;
 
 import java.util.List;

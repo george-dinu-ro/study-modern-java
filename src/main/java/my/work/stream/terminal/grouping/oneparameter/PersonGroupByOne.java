@@ -1,4 +1,4 @@
-package my.work.stream.terminal.groupingBy.oneparameter;
+package my.work.stream.terminal.grouping.oneparameter;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

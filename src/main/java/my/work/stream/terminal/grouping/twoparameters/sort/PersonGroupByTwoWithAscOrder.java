@@ -1,4 +1,4 @@
-package my.work.stream.terminal.groupingBy.twoparameters.sort;
+package my.work.stream.terminal.grouping.twoparameters.sort;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -13,34 +13,34 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class PersonGroupByTwoWithDescOrder {
+public class PersonGroupByTwoWithAscOrder {
 
-    public static Map<String, Optional<Person>> groupingByStatusOrderByAgeDescOptional(List<Person> people) {
+    public static Map<String, Optional<Person>> groupingByStatusOrderByAgeAscOptional(List<Person> people) {
         return people.stream()
                 .collect(
                         Collectors.groupingBy(
                                 Person::getStatus,
-                                Collectors.maxBy(Comparator.comparingInt(Person::getAge))));
+                                Collectors.minBy(Comparator.comparing(Person::getAge))));
     }
 
-    public static Map<String, Person> groupingByStatusOrderByAgeDescV1(List<Person> people) {
+    public static Map<String, Person> groupingByStatusOrderByAgeAscV1(List<Person> people) {
         return people.stream()
                 .collect(
                         Collectors.groupingBy(
                                 Person::getStatus,
                                 Collectors.collectingAndThen(
-                                        Collectors.maxBy(
+                                        Collectors.minBy(
                                                 Comparator.comparing(Person::getAge)),
                                         Optional::get)));
     }
 
-    public static Map<String, Person> groupingByStatusOrderByAgeDescV2(List<Person> people) {
+    public static Map<String, Person> groupingByStatusOrderByAgeAscV2(List<Person> people) {
         return people.stream()
                 .collect(
                         Collectors.toMap(
                                 Person::getStatus,
                                 Function.identity(),
-                                BinaryOperator.maxBy(Comparator.comparing(Person::getAge))));
+                                BinaryOperator.minBy(Comparator.comparing(Person::getAge))));
     }
 
 }

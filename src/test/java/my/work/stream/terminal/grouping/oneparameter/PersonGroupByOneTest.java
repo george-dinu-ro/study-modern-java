@@ -1,4 +1,4 @@
-package my.work.stream.terminal.groupingBy.oneparameter;
+package my.work.stream.terminal.grouping.oneparameter;
 
 import my.work.Person;
 import org.junit.jupiter.params.ParameterizedTest;

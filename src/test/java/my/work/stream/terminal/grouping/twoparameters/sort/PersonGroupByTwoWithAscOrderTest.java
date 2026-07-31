@@ -1,4 +1,4 @@
-package my.work.stream.terminal.groupingBy.twoparameters.sort;
+package my.work.stream.terminal.grouping.twoparameters.sort;
 
 import my.work.Person;
 import org.junit.jupiter.params.ParameterizedTest;
