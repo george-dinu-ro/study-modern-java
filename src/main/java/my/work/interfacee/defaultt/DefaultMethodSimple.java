@@ -18,4 +18,8 @@ public class DefaultMethodSimple {
         list.sort(Comparator.naturalOrder());
     }
 
+    public static void sortUsingNullSafeDefaultMethod(List<String> list) {
+        list.sort(Comparator.nullsFirst(Comparator.naturalOrder()));
+    }
+
 }
