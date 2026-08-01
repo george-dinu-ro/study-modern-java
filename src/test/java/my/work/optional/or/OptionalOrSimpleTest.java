@@ -71,7 +71,7 @@ class OptionalOrSimpleTest extends ALogger {
 
     @ParameterizedTest
     @MethodSource("initOrElseNotNull")
-    void whenCallOrElseGetBehaviorWithNotNull_thenUseOrElseGet(String input, String expected) {
+    void whenCallOrElseGetBehaviorWithNotNull_thenDontUseOrElseGet(String input, String expected) {
         OptionalOrSimple.OrElseGetBehavior(input);
 
         assertEquals(1, getMessagesSize());
