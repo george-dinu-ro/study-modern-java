@@ -4,22 +4,21 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import my.work.Person;
 
-import java.util.Collection;
 import java.util.Optional;
 import java.util.function.Predicate;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class OptionalFilterPerson {
-    public static Person filterIfHasPhones(Person person) {
+    public static Person personHasName(Person person) {
         return Optional.ofNullable(person)
-                .filter(OptionalFilterPerson::hasPhones)
+                .filter(OptionalFilterPerson::hasName)
                 .orElse(new Person());
     }
 
-    private static boolean hasPhones(Person person) {
+    private static boolean hasName(Person person) {
         return Optional.ofNullable(person)
-                .map(Person::getPhones)
-                .filter(Predicate.not(Collection::isEmpty))
+                .map(Person::getName)
+                .filter(Predicate.not(String::isEmpty))
                 .isPresent();
     }
 
