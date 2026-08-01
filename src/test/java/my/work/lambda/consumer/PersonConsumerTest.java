@@ -19,13 +19,13 @@ class PersonConsumerTest extends ALogger {
         PersonConsumer.showAllInfo(people);
 
         var expected = List.of(
-                "Person(name=John J., age=20, status=student, phones=[*10, *11, *12])",
-                "Person(name=Dan D., age=25, status=employee, phones=[*21, *22])",
-                "Person(name=Marry M., age=32, status=employee, phones=[*31])",
-                "Person(name=Nick N., age=27, status=employee, phones=[*41, *42])",
-                "Person(name=Eugen E., age=17, status=high-school, phones=[*51])",
-                "Person(name=Larry L., age=30, status=employee, phones=[])",
-                "Person(name=Bob B., age=16, status=high-school, phones=[])");
+                "Person(name=John J., age=20, status=student, car=Optional.empty, phones=[*10, *11, *12])",
+                "Person(name=Dan D., age=25, status=employee, car=Optional.empty, phones=[*21, *22])",
+                "Person(name=Marry M., age=32, status=employee, car=Optional.empty, phones=[*31])",
+                "Person(name=Nick N., age=27, status=employee, car=Optional.empty, phones=[*41, *42])",
+                "Person(name=Eugen E., age=17, status=high-school, car=Optional.empty, phones=[*51])",
+                "Person(name=Larry L., age=30, status=employee, car=Optional.empty, phones=[])",
+                "Person(name=Bob B., age=16, status=high-school, car=Optional.empty, phones=[])");
 
         assertEquals(expected.size(), getMessagesSize());
 

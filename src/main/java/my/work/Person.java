@@ -10,6 +10,7 @@ import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,6 +26,9 @@ public class Person {
     private int age;
 
     private String status;
+
+    @Builder.Default
+    private Optional<String> car = Optional.empty();
 
     @Builder.Default
     private List<String> phones = new ArrayList<>();
