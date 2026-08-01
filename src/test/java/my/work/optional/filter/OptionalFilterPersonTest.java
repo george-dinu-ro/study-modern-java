@@ -22,25 +22,12 @@ class OptionalFilterPersonTest {
 
     private static Stream<Arguments> initFilter() {
         return Stream.of(
+                Arguments.of(null, new Person()),
+                Arguments.of(new Person(), new Person()),
+                Arguments.of(Person.builder().phones(null).build(), new Person()),
                 Arguments.of(
-                        null,
-                        new Person()),
-                Arguments.of(
-                        new Person(),
-                        new Person()
-                ),
-                Arguments.of(
-                        Person.builder()
-                                .phones(null)
-                                .build(),
-                        new Person()),
-                Arguments.of(
-                        Person.builder()
-                                .phones(List.of("*10"))
-                                .build(),
-                        Person.builder()
-                                .phones(List.of("*10"))
-                                .build()));
+                        Person.builder().phones(List.of("*10")).build(),
+                        Person.builder().phones(List.of("*10")).build()));
     }
 
 }
