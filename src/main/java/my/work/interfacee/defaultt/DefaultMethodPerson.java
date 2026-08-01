@@ -19,6 +19,11 @@ public class DefaultMethodPerson {
         return people;
     }
 
+    public static List<Person> compareByNameNullSafe(List<Person> people) {
+        people.sort(Comparator.nullsFirst(NAME_COMPARATOR));
+        return people;
+    }
+
     public static List<Person> compareByNumberOfPhones(List<Person> people) {
         people.sort(NUMBER_OF_PHONES_COMPARATOR);
         return people;
