@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class SimplePredicate {
 
-    private static final Predicate<String> AT_LEAST_3_CHARACTERS = s -> s.length() >= 3;
+    public static final Predicate<String> AT_LEAST_3_CHARACTERS = s -> s.length() >= 3;
 
     private static final Predicate<String> AT_MOST_5_CHARACTERS = s -> s.length() <= 5;
 
