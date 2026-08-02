@@ -2,6 +2,7 @@ package my.work.date.localdate;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 
 public class LocalDateModify {
@@ -24,6 +25,10 @@ public class LocalDateModify {
 
     public LocalDate withYearWithChronoField(LocalDate date, int year) {
         return date.with(ChronoField.YEAR, year);
+    }
+
+    public LocalDate minusYearWithChronoUnit(LocalDate date, int amountToSubtract) {
+        return date.minus(amountToSubtract, ChronoUnit.YEARS);
     }
 
     public LocalDate withTemporalAdjusters(LocalDate date) {

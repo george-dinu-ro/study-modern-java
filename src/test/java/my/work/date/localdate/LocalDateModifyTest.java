@@ -45,6 +45,12 @@ class LocalDateModifyTest {
     }
 
     @Test
+    void testMinusYearWithChronoUnit() {
+        var localDate = localDateModify.minusYearWithChronoUnit(LocalDate.now(), 1);
+        System.out.println(localDate);
+    }
+
+    @Test
     void testWithTemporalAdjusters() {
         var localDate = localDateModify.withTemporalAdjusters(LocalDate.now());
         System.out.println(localDate);
