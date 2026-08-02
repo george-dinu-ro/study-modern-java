@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.temporal.ChronoField;
 
-public class LocalDateSimple {
+public class LocalDateRead {
 
     public LocalDate now() {
         return LocalDate.now();

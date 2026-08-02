@@ -5,66 +5,66 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
-class LocalDateSimpleTest {
+class LocalDateReadTest {
 
-    private static LocalDateSimple localDateSimple;
+    private static LocalDateRead localDateRead;
 
     @BeforeEach
     void init() {
-        localDateSimple = new LocalDateSimple();
+        localDateRead = new LocalDateRead();
     }
 
     @Test
     void testNow() {
-        var localDate = localDateSimple.now();
+        var localDate = localDateRead.now();
         System.out.println(localDate);
     }
 
     @Test
     void testOf() {
-        var localDate = localDateSimple.of(2026, 8, 2);
+        var localDate = localDateRead.of(2026, 8, 2);
         System.out.println(localDate);
     }
 
     @Test
     void testOfYearDay() {
-        var localDate = localDateSimple.ofYearDay(2026, 214);
+        var localDate = localDateRead.ofYearDay(2026, 214);
         System.out.println(localDate);
     }
 
     @Test
     void testGetMonth() {
-        var month = localDateSimple.getMonth(LocalDate.now());
+        var month = localDateRead.getMonth(LocalDate.now());
         System.out.println(month);
     }
 
     @Test
     void testGetMonthValue() {
-        var monthValue = localDateSimple.getMonthValue(LocalDate.now());
+        var monthValue = localDateRead.getMonthValue(LocalDate.now());
         System.out.println(monthValue);
     }
 
     @Test
     void testGetDayOfWeek() {
-        var dayOfWeek = localDateSimple.getDayOfWeek(LocalDate.now());
+        var dayOfWeek = localDateRead.getDayOfWeek(LocalDate.now());
         System.out.println(dayOfWeek);
     }
 
     @Test
     void testGetDayOfMonth() {
-        var dayOfMonth = localDateSimple.getDayOfMonth(LocalDate.now());
+        var dayOfMonth = localDateRead.getDayOfMonth(LocalDate.now());
         System.out.println(dayOfMonth);
     }
 
     @Test
     void testGetDayOfMonthWithChronoField() {
-        var dayOfMonth = localDateSimple.getDayOfMonthWithChronoField(LocalDate.now());
+        var dayOfMonth = localDateRead.getDayOfMonthWithChronoField(LocalDate.now());
         System.out.println(dayOfMonth);
     }
 
     @Test
     void testGetDayOfYear() {
-        var dayOfYear = localDateSimple.getDayOfYear(LocalDate.now());
+        var dayOfYear = localDateRead.getDayOfYear(LocalDate.now());
         System.out.println(dayOfYear);
     }
 
